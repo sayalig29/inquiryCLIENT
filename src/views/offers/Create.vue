@@ -26,6 +26,11 @@
                 :rules="[() => !form.errors.has('date') || form.errors.get('date') ]"
               ></v-text-field>  
 
+              <v-date-picker name="date" label="Date" id="type" 
+                :landscape="true"
+                v-model="form.date"   
+              ></v-date-picker>
+
               <v-text-field prepend-icon="widgets" name="cp_id" label="CP ID" id="cp_id" capacity="text" 
                 ref="cp_id"
                 v-model="form.cp_id"

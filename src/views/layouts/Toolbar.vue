@@ -7,7 +7,7 @@
     
     <span class="title ml-3 mr-5">
       <a href="/" style="color: white; text-decoration:none">
-        Crane Inquiry&nbsp;<span class="text">Management System</span>
+        Inquiry&nbsp;<span class="text">Management System</span>
       </a>
     </span>
       

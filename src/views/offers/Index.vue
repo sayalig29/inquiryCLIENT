@@ -4,7 +4,7 @@
     <v-card-title primary-title>
       <h3 class="headline mb-0">Machines Offered
         <v-btn small color="primary"
-          :to="`/inquiries/${form.id}/offers/create`"
+          :to="`/inquiries/${inquiry_id}/offers/create`"
         >Offer New Machine</v-btn>
       </h3>
       
@@ -86,6 +86,8 @@
                 ${
                   item.offer_details.map(details => {
                     return `
+                      <b>Date: </b> ${item.date}
+                      <br>
                       <b>CP ID: </b> ${item.cp_id ? item.cp_id : ''}
                       <br>
                       <b>Type: </b> ${details.type}
@@ -98,14 +100,18 @@
               modes: `
                 ${
                   item.modes.map(mode => {
-                    return mode.mode
+                    return `
+                      ${mode.mode}
+                    `
                   })
                 }
               `,
               statuses: `
                 ${
                   item.statuses.map(status => {
-                    return status.status
+                    return `
+                      ${status.status}
+                    `
                   })
                 }
               `,
@@ -113,11 +119,11 @@
                 ${
                   item.offer_remarks.map((remark, index) => {
                     return `
+                      <br>
                       ${index + 1}. [<b>${remark.date}</b>], ${remark.remark}
                       <a
                         href="/inquiries/${this.$route.params.inquiry_id}/offers/${item.id}/remarks/${remark.id}/edit"
                       >[ edit ]</a>
-                      <br>
                     `
                   })
                 }

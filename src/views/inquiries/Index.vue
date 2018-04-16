@@ -27,8 +27,10 @@
             :headers="headers"
             :items="items"
             :search="search"
+            item-key="id" 
           >
             <template slot="items" slot-scope="props">
+              <td v-html="props.item.date"></td> 
               <td v-html="props.item.inquirer"></td> 
               <td v-html="props.item.inquiry_details"></td> 
               <td v-html="props.item.hiring_details"></td> 
@@ -63,7 +65,8 @@
 </template>
 
 <script type="text/javascript">
-
+  
+  import moment from 'moment'
   import Form from 'helpers/Form.js'
   
   export default {
@@ -72,12 +75,14 @@
       form: new Form,
       search: '',
       headers: [
+        { text: 'Date', sortable:false, value: 'date'}, 
         { text: 'Inquirer', sortable:false, value: 'inquirer'}, 
         { text: 'Inquiry Details', sortable:false, value: 'inquiry_details'}, 
         { text: 'Hiring Details', sortable:false, value: 'hiring_details'}, 
         { text: 'Mode of Inquiry', sortable:false, value: 'modes'}, 
         { text: 'Inquiry Type', sortable:false, value: 'types'}, 
       ],
+      customSort: {isDescending: true},
       items: []
     }),
 
@@ -90,7 +95,8 @@
 
             this.items.push({
               id: item.id,
-              inquirer: `
+              date: moment(item.date).format('DD-MM-YYYY'),
+              inquirer: ` 
                 ${item.contact.name}
                 <br>
                 <b>Company:</b> ${item.contact.contact_company_name}

@@ -26,6 +26,11 @@
                 :rules="[() => !form.errors.has('date') || form.errors.get('date') ]"
               ></v-text-field>  
 
+              <v-date-picker name="date" label="Date" id="type" 
+                :landscape="true"
+                v-model="form.date"   
+              ></v-date-picker>
+
               <v-text-field prepend-icon="settings_remote" name="remark" label="Add remark" id="remark" type="text" 
                 ref="remark"
                 v-model="form.remark"

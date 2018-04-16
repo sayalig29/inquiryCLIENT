@@ -47,6 +47,10 @@
                 :rules="[() => !form.errors.has('date') || form.errors.get('date') ]"
               ></v-text-field>  
 
+              <v-date-picker name="date" label="Date" id="type" 
+                :landscape="true"
+                v-model="form.date"   
+              ></v-date-picker>
 
               <v-text-field prepend-icon="arrow_forward" name="inquiryDetails.type" label="Machine Type" id="type" type="text" 
                 ref="inquiryDetails.type"

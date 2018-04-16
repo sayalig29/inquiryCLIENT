@@ -48,6 +48,10 @@
                 :rules="[() => !form.errors.has('date') || form.errors.get('date') ]"
               ></v-text-field>  
 
+              <v-date-picker name="date" label="Date" id="type" 
+                :landscape="true"
+                v-model="form.date"   
+              ></v-date-picker>
 
               <v-text-field prepend-icon="arrow_forward" name="inquiryDetails.type" label="Machine Type" id="type" type="text" 
                 ref="inquiryDetails.type"
@@ -137,13 +141,14 @@
 <script type="text/javascript">
   
   import Form from 'helpers/Form.js'
+  import moment from 'moment'
 
   export default {
 
     data: () => ({
       form: new Form({
         contact_id: '',
-        date: '',
+        date: moment().format('YYYY-MM-DD'),
         inquiryDetails: {
           type: '',
           capacity: ''
