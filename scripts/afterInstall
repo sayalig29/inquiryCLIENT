@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /var/www/html/InquiryMS/client 
 
-node /usr/bin/npm install
+npm install
