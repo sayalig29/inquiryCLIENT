@@ -1,6 +1,6 @@
 # ims
 
-> Inquiry Management System
+> Inquiry Management System.
 
 ## Build Setup
 
