@@ -3,6 +3,7 @@ import * as types from '../mutation-types.js'
 const state = {
   api: {
     baseUrl: 'http://localhost:8080/'
+    // baseUrl: 'http://13.127.86.242:8082/'
   },
   company: {
     id: Number,
