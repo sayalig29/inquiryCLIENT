@@ -32,7 +32,7 @@ class Form {
   }
 
   /*
-   * Get the form data.
+   * Get the form data
    *
    *@
    */
