@@ -1,5 +1,5 @@
 #!/bin/bash
 cd /var/www/html/InquiryMS/client 
 
-sudo npm install
+npm install
  
